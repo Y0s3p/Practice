@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Practica</string>
+    <string-array name="operador">
+        <item>Sumar</item>
+        <item>Restar</item>
+        <item>Multiplicar</item>
+        <item>Dividir</item>
+    </string-array>
+</resources>
