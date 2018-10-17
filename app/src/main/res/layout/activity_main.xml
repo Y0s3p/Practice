@@ -50,18 +50,26 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
+        <EditText
+            android:id="@+id/editText"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:ems="10"
+            android:hint="Introduzca una palabra"
+            android:inputType="text|textPersonName" />
+
         <SeekBar
             android:id="@+id/seekbar3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="50dp" />
+            android:layout_marginTop="25dp" />
 
-        <TextView
-            android:id="@+id/valor4TV"
-            android:layout_width="200dp"
-            android:layout_height="50dp"
-            android:layout_marginLeft="100dp"
-            android:layout_marginTop="75dp" />
+        <Button
+            android:id="@+id/buttonRV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            android:text="Ejecutar" />
 
     </LinearLayout>
 
@@ -89,6 +97,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="25dp"
+                android:onClick="operacion"
                 android:text="Calcular" />
         </RadioGroup>
     </LinearLayout>

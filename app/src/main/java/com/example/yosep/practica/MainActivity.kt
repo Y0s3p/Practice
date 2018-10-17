@@ -13,6 +13,8 @@ import android.content.Intent
 
 class MainActivity : AppCompatActivity() {
 
+    var listaDatos : ArrayList<String> = arrayListOf()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -81,8 +83,10 @@ class MainActivity : AppCompatActivity() {
 
     fun operacion(v : View){
 
+        var intent = Intent(this, ResultadoActivity::class.java)
+
         var total = 0
-        var operar = operador.selectedItemPosition.toString()
+        var operar = operador.getSelectedItem().toString();
 
         when(operar){
 
@@ -109,16 +113,26 @@ class MainActivity : AppCompatActivity() {
 
         }
 
-        val intent = Intent(this, ResultadoActivity::class.java)
+
         // Pasar datos a la otra actividad
-        intent.putExtra("Resultado", total)
+        intent.putExtra("Result", total)
         startActivity(intent)
 
     }
 
     fun displayMessage(v : View){
 
-        for (i in 1..seekbar3.progress) print(valor4TV)
+        var intent = Intent(this, MessageActivity::class.java)
+
+        for (i in 1..seekbar3.progress){
+
+            listaDatos.add(editText.text.toString() + i)
+
+        }
+
+        // Pasar datos a la otra actividad
+        intent.putExtra("array", listaDatos)
+        startActivity(intent)
 
     }
 
